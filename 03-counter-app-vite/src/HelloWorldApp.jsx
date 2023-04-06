@@ -2,7 +2,7 @@ import React from 'react'
 
 function App() {
     // document.createElement...
-    return <h1>Hola Mundo!!</h1>
+    // return <h1>Hola Mundo!!</h1>
 }
 
 

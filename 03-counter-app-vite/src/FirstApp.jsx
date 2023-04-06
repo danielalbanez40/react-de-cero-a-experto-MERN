@@ -1,16 +1,11 @@
 import React from 'react';
 
-const getResult = (a,b) => {
-  return a + b;
-}
-
-const FirstApp = () => {
-   
+const FirstApp = ({ title, subtitle }) => {
   return (
     <>
-      <h1>{getResult(4,4)}</h1>
+      <h1>{title}</h1>
       {/* <code>{JSON.stringify(newMessage)}</code> */}
-      <h2>Soy un subtítulo</h2>
+      <p>{subtitle}</p>
     </>
   );
 };
