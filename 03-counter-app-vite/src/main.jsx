@@ -9,7 +9,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     {/* { <HelloWorldApp /> */}
     {/* <FirstApp title='Hola, sou Goku' subtitle='Soy un subtítulo'/>  */}
-    {/* <CounterApp value={20}/> */}
-    <FirstApp title='Hola, soy Vegeta'/>
+    <CounterApp value={20}/>
+    {/* <FirstApp title='Hola, soy Vegeta'/> */}
   </React.StrictMode>,
 );
