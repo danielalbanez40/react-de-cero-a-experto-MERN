@@ -1,4 +1,4 @@
-import { render } from '@testing-library/react';
+import { getAllByText, render } from '@testing-library/react';
 import FirstApp from '../FirstApp';
 
 describe('Tests in <FirstApp/>', () => {
@@ -26,7 +26,8 @@ describe('Tests in <FirstApp/>', () => {
     const title = 'Hola, soy Goku';
     const subtitle = 'Soy un Subtítulo';
     const { getByText } = render(<FirstApp title={title} subtitle={subtitle} />);
-    expect(getByText(subtitle)).toBeTruthy();
+    // expect(getByText(subtitle)).toBeTruthy();
+    expect(getAllByText(subtitle).length).toBe(2)
   });
   
 });
