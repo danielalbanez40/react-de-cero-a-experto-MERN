@@ -1,9 +1,12 @@
-import React from 'react'
-
 const GifExpertApp = () => {
   return (
+    // Titulo
     <h1>GifExpertApp</h1>
-  )
-}
+    // Input
+    
+    // Listado de Gifs
+      // Gif Item
+  );
+};
 
-export default GifExpertApp
+export default GifExpertApp;
