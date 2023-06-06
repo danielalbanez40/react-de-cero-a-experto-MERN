@@ -1,7 +1,7 @@
-import { useState } from 'react';
+import { useState } from "react";
 
-const AddCategory = () => {
-  const [inputsearch, setInputsearch] = useState('One Punch');
+const AddCategory = ({ onNewCategory }) => {
+  const [inputsearch, setInputsearch] = useState("");
 
   const handleChange = (e) => {
     setInputsearch(e.target.value);
@@ -9,13 +9,21 @@ const AddCategory = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(inputsearch);
+    if (inputsearch.trim().length <= 1) return;
 
+    // setCategories(categories => [inputsearch, ...categories]);
+    onNewCategory(inputsearch.trim())
+    setInputsearch('')
   };
 
   return (
     <form onSubmit={handleSubmit}>
-      <input type="search" placeholder="Buscar Gifs" value={inputsearch} onChange={handleChange} />
+      <input
+        type="search"
+        placeholder="Buscar Gifs"
+        value={inputsearch}
+        onChange={handleChange}
+      />
     </form>
   );
 };
