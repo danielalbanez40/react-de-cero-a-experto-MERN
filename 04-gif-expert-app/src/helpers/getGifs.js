@@ -1,6 +1,6 @@
 const getGifs = async (category) => {
   const GIPHY_API_KEY = import.meta.env.VITE_GIPHY_API_KEY;
-  const url = `https://api.giphy.com/v1/gifs/search?api_key=${GIPHY_API_KEY}&q=${category}&limit=20`;
+  const url = `https://api.giphy.com/v1/gifs/search?api_key=${GIPHY_API_KEY}&q=${category}&limit=10`;
 
   const resp = await fetch(url);
   const { data } = await resp.json();
@@ -10,7 +10,7 @@ const getGifs = async (category) => {
     title: img.title,
     url: img.images.downsized_medium.url,
   }));
-  console.log(gifs);
+  // console.log(gifs);
   return gifs;
 };
 
