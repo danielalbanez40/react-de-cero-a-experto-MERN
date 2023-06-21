@@ -1,4 +1,3 @@
-// import { describe, test, expect } from "jest";
 import { render, screen } from "@testing-library/react";
 import GifItem from "../../components/GifItem/GifItem";
 
