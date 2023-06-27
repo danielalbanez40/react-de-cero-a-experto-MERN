@@ -1,10 +1,11 @@
 import { useState } from "react";
+import PropTypes from 'prop-types'
 
 const AddCategory = ({ onNewCategory }) => {
   const [inputsearch, setInputsearch] = useState("");
 
-  const handleChange = (e) => {
-    setInputsearch(e.target.value);
+  const handleChange = ({target}) => {
+    setInputsearch(target.value);
   };
 
   const handleSubmit = (e) => {
@@ -12,8 +13,8 @@ const AddCategory = ({ onNewCategory }) => {
     if (inputsearch.trim().length <= 1) return;
 
     // setCategories(categories => [inputsearch, ...categories]);
-    onNewCategory(inputsearch.trim())
     setInputsearch('')
+    onNewCategory(inputsearch.trim())
   };
 
   return (
@@ -27,5 +28,9 @@ const AddCategory = ({ onNewCategory }) => {
     </form>
   );
 };
+
+AddCategory.propTypes = {
+  onNewCategory: PropTypes.func.isRequired
+}
 
 export default AddCategory;
