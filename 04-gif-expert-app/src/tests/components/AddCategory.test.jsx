@@ -14,8 +14,9 @@ describe("Test in <AddCategory></AddCategory>", () => {
 
   test("should call to handleSubmit if the input has a value", () => {
     const inputValue = "Saitama";
-    // TODO: ???
-    render(<AddCategory onNewCategory={() => {}} />);
+    const onNewCategory = jest.fn();
+
+    render(<AddCategory onNewCategory={onNewCategory} />);
 
     const input = screen.getByRole("searchbox");
     const form = screen.getByRole("form");
@@ -25,5 +26,23 @@ describe("Test in <AddCategory></AddCategory>", () => {
     // screen.debug()
 
     expect(input.value).toBe("");
+
+    expect(onNewCategory).toHaveBeenCalled();
+    expect(onNewCategory).toHaveBeenCalledTimes(1);
+    expect(onNewCategory).toHaveBeenCalledWith(inputValue);
+  });
+
+  test("dont should call onNewCategory function if the input is empty", () => {
+    const onNewCategory = jest.fn();
+    render(<AddCategory onNewCategory={onNewCategory} />);
+
+    const form = screen.getByRole("form");
+
+    fireEvent.submit(form);
+    // screen.debug()
+
+    expect(onNewCategory).not.toHaveBeenCalled();
+    expect(onNewCategory).toHaveBeenCalledTimes(0);
+
   });
 });
