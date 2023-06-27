@@ -18,7 +18,7 @@ const AddCategory = ({ onNewCategory }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} aria-label="form">
       <input
         type="search"
         placeholder="Buscar Gifs"
