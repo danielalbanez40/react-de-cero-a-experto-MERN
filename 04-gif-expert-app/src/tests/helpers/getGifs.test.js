@@ -1,4 +1,5 @@
 import { getGifs } from "../../helpers/getGifs";
+import { describe, test, expect } from "@jest/globals";
 
 describe("Tests in getGifs File", () => {
   test("Should be return Gif's Array", async () => {

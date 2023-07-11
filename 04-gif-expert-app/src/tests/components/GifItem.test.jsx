@@ -1,5 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import GifItem from "../../components/GifItem/GifItem";
+import { describe, test, expect } from "@jest/globals";
 
 describe("Pruebas en <GifItem/>", () => {
   const title = "Saitama";
