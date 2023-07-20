@@ -19,9 +19,14 @@ const initialState = [
 const ToDoApp = () => {
   const [todos, dispatch] = useReducer(todoReducer, initialState);
 
-  const handleNewTodo = (todo) => { 
-    console.log({todo});
-   }
+  const handleNewTodo = (todo) => {
+    const action = {
+      type: "ADD_TODO",
+      payload: todo,
+    };
+
+    dispatch(action)
+  };
 
   return (
     <>
@@ -32,7 +37,6 @@ const ToDoApp = () => {
       <div className="row">
         <div className="col-7">
           <TodoList todos={todos} />
-         
         </div>
 
         <div className="col-5">
