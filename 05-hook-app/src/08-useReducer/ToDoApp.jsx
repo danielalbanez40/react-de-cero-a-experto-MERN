@@ -26,13 +26,23 @@ const ToDoApp = () => {
   };
 
   const handleDeleteTodo = (id) => {
-       
     const deleteTodoAction = {
       type: "DELETE_TODO",
       payload: id,
     };
 
     dispatch(deleteTodoAction);
+  };
+  
+  const handleToggleTodo = (id) => {
+
+    const toggleTodoAction = {
+      type: "TOGGLE_TODO",
+      payload: id,
+    };
+  
+    dispatch(toggleTodoAction);
+
   };
 
   return (
@@ -43,11 +53,15 @@ const ToDoApp = () => {
 
       <div className="row">
         <div className="col-7">
-          <TodoList todos={todos} onDeleteTodo={handleDeleteTodo}/>
+          <TodoList
+            todos={todos}
+            onDeleteTodo={handleDeleteTodo}
+            onToggleTodo={handleToggleTodo}
+          />
         </div>
 
         <div className="col-5">
-          <h4>Agregar TODO</h4> 
+          <h4>Agregar TODO</h4>
           <hr />
 
           <TodoAdd onNewTodo={handleNewTodo} />
