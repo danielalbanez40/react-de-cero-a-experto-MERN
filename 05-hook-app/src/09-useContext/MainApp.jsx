@@ -3,10 +3,11 @@ import HomePage from "./HomePage";
 import LoginPage from "./LoginPage";
 import AboutPage from "./AboutPage";
 import NavBar from "./Navbar";
+import UserProvider from "./context/UserProvider";
 
 const MainApp = () => {
   return (
-    <>
+    <UserProvider>
       <h1>MainApp</h1>
        <NavBar />
       <hr />
@@ -20,7 +21,7 @@ const MainApp = () => {
 
         {/* <Route path="*" element={<LoginPage />} /> */}
       </Routes>
-    </>
+    </UserProvider>
   );
 };
 
